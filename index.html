@@ -3,14 +3,9 @@
 
   <head>
       <title>RPS Game</title>
-      <!-- Link CSS here -->
       
-      <!-- Link JQuery here -->
-      
-      <!-- Link Javascript File here -->
-      
-      <!-- Latest compiled and minified Bootstrap CSS -->
-      
+      <link rel="stylesheet" href="css/style.css" type="text/css"/>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   </head>
 
   <body>
@@ -22,14 +17,41 @@
         5. Add divs to record User Choice and Computer Choice.
         6. Add a div to record the Winner.
      -->
-    <div class="container text-center">
-    
+    <div class="container-fluid text-center">
+      <header class="jumbotron">
+        <h1>Rock Paper Scissors</h1>
+        <div class="row">
+          <img class="col-xs-12" src="https://pre00.deviantart.net/479c/th/pre/i/2009/011/c/1/rock_paper_scissors_by_smashmethod.jpg">
+        </div>
+        <input>
+        <button>Submit</button>
+        <div class="row">
+          <div class="col-xs-6" id="left">
+            <h4>Player</h4>
+            <h6>Your Choice:</h6>
+            <h5></h5>
+          </div>
+          <div class="col-xs-6" id="right">
+            <h4>Computer</h4>
+            <h6>Computer's Choice:</h6>
+          </div>
+        </div>
+        <div>
+          <h3>Result:</h3>
+        </div>
+      </header>
       
 
 
     
     </div>
-
+    
+    
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        
+    <script type="text/javascript" src="js/script.js"></script>
   </body>
 
 </html>

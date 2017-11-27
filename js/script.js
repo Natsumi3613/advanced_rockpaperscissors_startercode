@@ -27,4 +27,6 @@
 
 
 // DOCUMENT READY FUNCTION
-
+$(document).ready({
+        
+});
