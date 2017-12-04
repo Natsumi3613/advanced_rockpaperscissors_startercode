@@ -17,11 +17,11 @@
         5. Add divs to record User Choice and Computer Choice.
         6. Add a div to record the Winner.
      -->
-    <div class="container-fluid text-center">
+    <div class="container text-center">
       <header class="jumbotron">
         <h1>Rock Paper Scissors</h1>
         <div class="row">
-          <img class="col-xs-12" src="https://pre00.deviantart.net/479c/th/pre/i/2009/011/c/1/rock_paper_scissors_by_smashmethod.jpg">
+          <img id="img" src="https://pre00.deviantart.net/479c/th/pre/i/2009/011/c/1/rock_paper_scissors_by_smashmethod.jpg">
         </div>
         <input>
         <button>Submit</button>
@@ -29,11 +29,12 @@
           <div class="col-xs-6" id="left">
             <h4>Player</h4>
             <h6>Your Choice:</h6>
-            <h5></h5>
+            <h5 id="pchoice"></h5>
           </div>
           <div class="col-xs-6" id="right">
             <h4>Computer</h4>
             <h6>Computer's Choice:</h6>
+            <h5 id="cchoice"></h5>
           </div>
         </div>
         <div>
