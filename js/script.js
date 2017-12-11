@@ -28,18 +28,20 @@
 
 // DOCUMENT READY FUNCTION
 $(document).ready(function(){
-        var computerChoice = "";
-        var winner = "";
-        var choices = ["rock","paper","scissor"];
         
-        $("input").keyup(function(event) {
-                if (event.keyCode === 13) {
-                        $("button").click();
+        $('#refresh').click(function(){
+                location.reload();
+        });
+        
+        $("input").keyup(function(event){
+                if (event.keyCode === 13){
+                        $("#submit").click();
                 }
         });
         
-        $("button").click(function(){
-                var userChoice = $("input").val();
+        $("#submit").click(function(){
+                var userChoice = $("input").val().toLowerCase();
+                var choices = ["rock","paper","scissor"];
                 if(userChoice === choices[0]){
                         $("#pchoice").html('<img src="https://previews.123rf.com/images/julinzy/julinzy1310/julinzy131000173/23262897-hand-sign-of-rock-paper-scissors-game-isolated-vector-on-white--Stock-Photo.jpg"/>');
                 }else if(userChoice === choices[1]){
@@ -47,8 +49,57 @@ $(document).ready(function(){
                 }else if(userChoice === choices[2]){
                         $("#pchoice").html('<img src="https://previews.123rf.com/images/julinzy/julinzy1310/julinzy131000181/23262905-hand-sign-of-rock-paper-scissors-game-isolated-vector-on-white-background-Stock-Vector.jpg"/>');
                 }else{
-                        $("#pchoice").html("Please enter rock, paper, or scissor.")
+                        $("#pchoice").html("Please enter rock, paper, or scissor.");
                 }
+                
+                var computerChoice = [
+                        '<img src="https://previews.123rf.com/images/julinzy/julinzy1310/julinzy131000173/23262897-hand-sign-of-rock-paper-scissors-game-isolated-vector-on-white--Stock-Photo.jpg"/>',
+                        '<img src="https://previews.123rf.com/images/julinzy/julinzy1310/julinzy131000180/23262904-hand-sign-of-rock-paper-scissors-game-isolated-vector-on-white-background-Stock-Vector.jpg"/>',
+                        '<img src="https://previews.123rf.com/images/julinzy/julinzy1310/julinzy131000181/23262905-hand-sign-of-rock-paper-scissors-game-isolated-vector-on-white-background-Stock-Vector.jpg"/>'
+                ];
+                
+                if(choices.includes(userChoice)){
+                        var x = Math.ceil(Math.random()*12);
+                        if(x <= 4){
+                                $("#cchoice").html(computerChoice[0]);
+                        }else if(x <= 8){
+                                $("#cchoice").html(computerChoice[1]);
+                        }else if(x<=12){
+                                $("#cchoice").html(computerChoice[2]);
+                        }
+                }else{
+                        $("#cchoice").html("Please enter rock, paper, or scissor.");
+                }
+                
+                var winner = ["You Won!","You Lose","Tie"];
+                if(userChoice === choices[0]){
+                        if(x <= 4){
+                                $("#result").html(winner[2]);
+                        }else if(x <= 8){
+                                $("#result").html(winner[1]);
+                        }else if(x <= 12){
+                                $("#result").html(winner[0]);
+                        }
+                }else if(userChoice === choices[1]){
+                        if(x <= 4){
+                                $("#result").html(winner[0]);
+                        }else if(x <= 8){
+                                $("#result").html(winner[2]);
+                        }else if(x <= 12){
+                                $("#result").html(winner[1]);
+                        }
+                }else if(userChoice === choices[2]){
+                        if(x <= 4){
+                                $("#result").html(winner[1]);
+                        }else if(x <= 8){
+                                $("#result").html(winner[0]);
+                        }else if(x <= 12){
+                                $("#result").html(winner[2]);
+                        }
+                }
+                
+                
+                
                 $("input").val("");
         });
 });

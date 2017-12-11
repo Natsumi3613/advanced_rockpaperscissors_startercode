@@ -1,5 +1,5 @@
 #img{
-    width: 400px;
+    width: 300px;
     margin-bottom: 20px;
 }
 img{
@@ -18,4 +18,11 @@ img{
 }
 #pchoice{
     font-size: 40px; 
+}
+#cchoice{
+    font-size: 40px; 
+}
+#result{
+    color: navy;
+    font-size: 40px;
 }
